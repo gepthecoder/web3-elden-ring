@@ -41,7 +41,7 @@ namespace Web3_Elden_Ring
             
             _gameItemsQuery = await Moralis.GetClient().Query<DatabaseItem>();
             
-            PopulateItemsFromDB();
+            PopulateItemsFromDB(); // we have these items in moralis db
             PopulateRunes();
         }
 
