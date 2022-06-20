@@ -73,8 +73,9 @@ namespace Web3_Elden_Ring
             // Set gas estimate
             HexBigInteger value = new HexBigInteger(0);
             HexBigInteger gas = new HexBigInteger(0);
-            HexBigInteger gasPrice = new HexBigInteger(0);
+            HexBigInteger gasPrice = new HexBigInteger(100);
 
+            // magic goes here
             string resp = await Moralis.ExecuteContractFunction(GameManager.GameItemContractAddress, GameManager.GameItemContractAbi, "getItem", parameters, value, gas, gasPrice);
 
             return resp;
@@ -96,7 +97,7 @@ namespace Web3_Elden_Ring
             
             HexBigInteger value = new HexBigInteger(0);
             HexBigInteger gas = new HexBigInteger(0);
-            HexBigInteger gasPrice = new HexBigInteger(100); //Higher than "GetItem" transaction
+            HexBigInteger gasPrice = new HexBigInteger(101); //Higher than "GetItem" transaction
             
             string resp = await Moralis.ExecuteContractFunction(GameManager.GameItemContractAddress, GameManager.GameItemContractAbi, "getItem", parameters, value, gas, gasPrice);
             
